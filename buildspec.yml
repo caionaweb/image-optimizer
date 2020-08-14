@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - mkdir /tmp/src/
+      - mv $CODEBUILD_SRC_DIR/* /tmp/src/
+      - cd /tmp/src/
+
+  build:
+    commands:
+      - zip function.zip index.js
+      -  aws lambda update-function-code --function-name imageconverter --zip-file fileb://function.zip
+
