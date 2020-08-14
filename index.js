@@ -93,7 +93,7 @@ exports.handler = (event, context, callback) => {
                 try {
                     // invoke ImageMagick to resize the image
                     const stdout = child.execSync(
-                        `convert ${tmpPath} -resize ${width}x${height}\\> -quality 80 ${targetPath}`
+                        `/opt/bin/convert ${tmpPath} -resize ${width}x${height}\\> -quality 80 ${targetPath}`
                     );
                 } catch(e) {
                     console.log('ImageMagick error');
