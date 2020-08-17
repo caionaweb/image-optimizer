@@ -41,7 +41,7 @@ exports.handler = (event, context, callback) => {
 
     const options = querystring.parse(request.querystring);
     const maxSize = 2000;
-    const width = Math.min(options.width || maxSize, maxSize);
+    const width = Math.min(options.w || maxSize, maxSize);
     const height = Math.min(options.height || maxSize, maxSize);
 
     // make sure input values are numbers
